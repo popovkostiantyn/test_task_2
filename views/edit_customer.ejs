@@ -1,0 +1,24 @@
+<%- include ('./layouts/header') %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/customers/edit/<%=data[0].id%>?_method=PUT">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Name</td><td>: <input type="text" name="name" value="<%=data[0].name%>" required></td>
+                 </tr>
+                  <tr>
+                    <td class="label">Phone</td><td>: <input type="number" name="phone" value="<%=data[0].Phone.number%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        <input type="submit" name="submit" value="Save">
+                        <input type="button" name="cancel" value="Cancel" class="cancel" onclick = location.href="/customers">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        

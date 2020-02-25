@@ -1,0 +1,23 @@
+<%- include ('./layouts/header') %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/customers/sms/<%=data%>">
+                <table cellpadding="11">
+                  <tr>
+                    <td class="label">Person ID</td><td>: <input type="text" name="id" value="<%=data%>" required></td>
+                  </tr>
+                  <tr>
+                    <td class="label">SMS text</td><td>: <input type="text" name="sms" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        <input type="submit" name="submit" value="Save">
+                        <input type="button" name="cancel" value="Cancel" class="cancel" onclick = location.href="../customers">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>

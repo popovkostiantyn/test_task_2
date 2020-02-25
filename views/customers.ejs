@@ -1,0 +1,41 @@
+<%- include ('./layouts/header') %>
+
+        <div class="page-data">
+         <div class="data-btn">
+           <button onclick = location.href="../customers/add">Add a person</button>
+         </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="5%">No</th>
+                    <th width="35%">Name</th>
+                    <th width="40%">Phone</th>
+                    <th>Action</th>
+                </tr>
+                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].name%></td>
+                    <td><%=data[i].Phone.number%></td>
+                    <form method="post" action="/customers/delete/<%=data[i].id%>?_method=DELETE">
+                    <td>
+                        <a class="a-inside edit" href="../customers/edit/<%=data[i].id%>">Edit</a>
+                        <input class="a-inside delete" type="submit" value="Delete">
+                        <a class="a-inside sms" href="../customers/sms/<%=data[i].id%>">SMS</a>
+                    </td>
+                    </form>
+                </tr>
+            <% }
+             }else{ %>
+                 <tr>
+                    <td colspan="4">No user</td>
+                 </tr>
+            <% } %>
+            </table>
+         </div>
+        </div>
+        

@@ -1,0 +1,18 @@
+{
+  "port": 4300,
+  "db": {
+      "host": "localhost",
+      "port": 3306,
+      "dialect": "mysql",
+      "password": "dev123",
+      "dbname": "dev",
+      "user": "dev"
+  },
+  "twilio": {
+      "accountSid": "AC6cb5c077949848c54ffda67f5055d3d7",
+      "authToken": "1d22e5742cdb8356869e90ac0d1e4dfc",
+      "phone": {
+        "from": "+13148274923"
+      }
+  }
+}
